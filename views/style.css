@@ -1,0 +1,137 @@
+body {
+	background: #FFF;
+	font-family: "Raleway", sans-serif;
+	line-height: 1.8; /* espaço entre linhas */
+	color: #000000;
+}
+
+a {
+	transition: 0.3s all ease; /* cria um efeito de transição de 0.3 segundos ao carregar tags <a> */
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: #000;
+	line-height: 1.5;
+	font-weight: normal;
+}
+
+#servicos {
+	text-align: justify !important;
+}
+
+.navbar-escura {
+	background: rgba(0, 0, 0, 0.2) !important;
+	position: absolute;
+	left: 0;
+	right: 0;
+}
+
+.navbar-escura .navbar-nav > .nav-item > .nav-link {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+    color: #FFF !important;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.sessao-principal {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../images/index-background-image.jpg);
+	background-position: center center;
+}
+
+.sessao-principal .sessao-texto .sessao-cabecalho-texto {
+	font-size: 70px;
+	line-height: 1;
+}
+
+.sessao-principal .sessao-texto .sessao-subcabecalho-texto p {
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.btn {
+	border-radius: 40px;
+	padding: 20px 30px;
+	font-size: 14px;
+	letter-spacing: 0.1em; /* espaço entre as letras */
+	text-transform: uppercase;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.btn-primary {
+	background-color: #5E001F;
+	border-color: #5E001F;
+	color: #FFF;
+}
+
+.btn-primary:active,
+.btn-primary:hover {
+	background-color: #00E1D9;
+	border-color: #00E1D9;
+	color:#000;
+}
+
+.btn-servicos {
+	background-color: transparent;
+	border-color: #FFF;
+	color: #FFF;
+}
+
+.btn-servicos:active,
+.btn-servicos:hover {
+	background-color: #FFF;
+	border-color: #FFF;
+	color:#000;
+}
+
+.sessao-altura {
+	height: 100vh; /* proporção: 1/100 da altura da viewport */
+}
+
+.sessao-principal-conteudo {
+	padding: 5em 0;
+}
+
+.rodape {
+	padding: 2em 0; /* neste caso, o padding é relativo ao tamanho da fonte (font-size)  */
+	background: #000;
+}
+
+.rodape a {
+	color: #FFF;
+}
+
+.rodape a:hover {
+	color: #28CC9E;
+}
+
+.rodape .sessao-cabecalho-texto {
+	color: #FFF;
+}
+
+.rodape-lista-ul > li {
+	font-size: 14px;
+	display: inline-block;
+}
+
+.rodape-lista-ul > li a {
+	color: rgba(255, 255, 255, 0.4);
+	margin: 0 10px 10px 0;
+}
+
+.rodape-lista-ul > li a:hover,
+.rodape-lista-ul > li a:focus {
+	color: #28CC9E;
+}

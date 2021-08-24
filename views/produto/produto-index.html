@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.E.O - Lista de Produtos</title>
+
+    <!-- Fonts Google -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap v4.6.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/home.html">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../empresa/empresa-index.html">
+                        Empresas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./produto-index.html">
+                        Produtos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../venda/venda-index.html">
+                        Movimentações
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <h3 class="text-center mt-4">Produtos</h3>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <label class="form-label">Nome</label>
+                    <input type="text" class="form-control" placeholder="Ex.: Notebook Dell" aria-label="Nome do produto">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Valor</label>
+                    <input type="text" class="form-control" placeholder="Ex.: 200,00" aria-label="Valor">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">QTD. Estoque</label>
+                    <input type="text" class="form-control" placeholder="Ex.: 10" aria-label="Quantidade do Estoque">
+                </div>
+                <div class="col" style="margin-top: 32px">
+                    <button type="button" class="btn btn-primary btn-block">Listar</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-md-8 col-md-4 mt-4">
+                    <button type="button" id="btnAdicionar" class="btn btn-primary btn-block">Adicionar</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-4">
+                <thead>
+                  <tr class="text-center">
+                    <th scope="col">Nome do produto</th>
+                    <th scope="col">Preço</th>
+                    <th scope="col">Estoque Atual</th>
+                    <th scope="col">Estoque Mínimo</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="text-center">
+                    <td scope="row">Notebook Dell</td>
+                    <td>R$ 4.000,00</td>
+                    <td>544</td>
+                    <td>5</td>
+                    <td>
+                        <button type="button" class="btn btn-sm btn-success">Editar</button>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('btnAdicionar').addEventListener('click', () => {
+            window.location = './produto-criar.html';
+        });
+    </script>
+</body>
+
+</html>

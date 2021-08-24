@@ -1,0 +1,59 @@
+body {
+	background: #5E001F;
+	background: linear-gradient(to right, #5E001F, #00E1D9);
+}
+
+.card-signin {
+	border: 0;
+	border-radius: 1rem;
+	box-shadow: 0 .5rem 1rem 0 rgb(75, 75, 75);
+}
+
+.card-signin .card-title {
+	margin-bottom: 2rem;
+	font-weight: 300;
+	font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+	padding: 2rem;
+}
+
+.card-body {
+    padding-bottom: 1rem !important;
+}
+
+.form-signin {
+	width: 100%;
+}
+
+.form-signin .btn {
+	font-size: 80%;
+	border-radius: 5rem;
+	letter-spacing: .1rem;
+	font-weight: 700;
+	padding: 1rem;
+	transition: all .2s;
+}
+
+.form-label-group {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.form-label-group input {
+	height: auto;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.btn-primary {
+	background-color: #5E001F;
+	border-color: #5E001F;
+}
+
+.btn-primary:hover {
+	background-color: #00E1D9;
+	border-color: #00E1D9;
+	color: #000;
+}

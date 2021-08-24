@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C.E.O - Lista de Movimentações</title>
+
+    <!-- Fonts Google -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap v4.6.0 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/home.html">
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../empresa/empresa-index.html">
+                        Empresas
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../produto/produto-index.html">
+                        Produtos
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./venda-index.html">
+                        Movimentações
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <h3 class="text-center mt-4">Movimentações</h3>
+
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <label class="form-label">Nome do Produto</label>
+                    <input type="text" class="form-control" placeholder="Nome do Produto" aria-label="Nome do Produto">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Data</label>
+                    <input type="date" class="form-control" aria-label="Data da movimentação">
+                </div>
+                <div class="col-md-2">
+                    <label class="form-label">Tipo</label>
+                    <select class="custom-select" aria-label="Tipo da movimentação">
+                        <option selected></option>
+                        <option value="ENTRADA">Entrada</option>
+                        <option value="SAIDA">Saída</option>
+                    </select>
+                </div>
+                <div class="col" style="margin-top: 32px">
+                    <button type="button" class="btn btn-primary btn-block">Listar</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-md-8 col-md-2 mt-4">
+                    <button type="button" id="btnAdicionar" class="btn btn-primary btn-block">Adicionar</button>
+                </div>
+                <div class="col-md-2 mt-4">
+                    <button type="button" class="btn btn-primary btn-block">Emitir Relatório</button>
+                </div>
+            </div>
+
+            <table class="table table-striped table-hover mt-4">
+                <thead>
+                    <tr class="text-center">
+                        <th scope="col">Nome do Protudo</th>
+                        <th scope="col">QTDE. Movimentada</th>
+                        <th scope="col">Tipo</th>
+                        <th scope="col">QTDE. Estoque</th>
+                        <th scope="col">Data</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="text-center">
+                        <td scope="row">Notebook Dell</td>
+                        <td>3</td>
+                        <td>Saída</td>
+                        <td>17</td>
+                        <td>11/06/2021</td>
+                        <td>
+                            <button type="button" class="btn btn-sm btn-danger">Cancelar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <script>
+        document.getElementById('btnAdicionar').addEventListener('click', () => {
+            window.location = './venda-criar.html';
+        });
+    </script>
+</body>
+
+</html>
