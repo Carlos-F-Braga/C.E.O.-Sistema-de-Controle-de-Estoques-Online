@@ -32,7 +32,7 @@
 				</form>	
 			</div>
 			<label class="text-center">
-				Ainda não tem uma conta? <a href="../usuario/usuario-cadastrar.html">Crie uma</a>
+				Ainda não tem uma conta? <a href="../usuario/usuario-cadastrar.php">Crie uma</a>
 			</label>
 			</div>
 		</div>

@@ -104,3 +104,7 @@
         </div>
     </div>
 </footer>
+
+<?php
+    require_once('./layouts/footer.php');
+?>

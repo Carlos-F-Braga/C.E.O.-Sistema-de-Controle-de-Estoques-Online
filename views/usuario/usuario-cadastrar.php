@@ -1,26 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>C.E.O - Cadastrar-se</title>
-
-	<!-- Fonts Google -->
-	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
-		type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
-	<!-- Bootstrap v4.6.0 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-
-	<link rel="stylesheet" href="./style.css" />
-</head>
-
-<body>
-
+<?php
+	require_once('../layouts/header.php');
+?>
 	<div class="container">
 
 		<div class="row">
@@ -28,20 +8,20 @@
 				<div class="card card-signin my-4">
 					<div class="card-body">
 						<h5 class="card-title text-center"><b>Cadastrar-se</b></h5>
-						<form action="#" method="POST" class="form-signin">
+						<form action="../../src/usuario/usuario-cadastrar.php" method="POST" class="form-signin">
 
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="nome">Nome</label>
-									<input type="text" class="form-control" placeholder="Digite seu nome">
+									<input type="text" class="form-control" name="nome" placeholder="Digite seu nome">
 								</div>
 								<div class="form-group col-md-3">
 									<label for="cpf">CPF</label>
-									<input type="text" maxlength="14" class="form-control" id="cpf" placeholder="CPF">
+									<input type="text" maxlength="14" name="cpf" class="form-control" id="cpf" placeholder="CPF">
 								</div>
 								<div class="form-group col-md-3">
 									<label for="telefone">Telefone</label>
-									<input type="text" maxlength="14" class="form-control" id="telefone"
+									<input type="text" maxlength="14" name="telefone" class="form-control" id="telefone"
 										placeholder="Telefone">
 								</div>
 							</div>
@@ -49,11 +29,11 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="email">E-mail</label>
-									<input type="email" class="form-control" placeholder="Ex.: exemplo@gmail.com">
+									<input type="email" class="form-control" name="email" placeholder="Ex.: exemplo@gmail.com">
 								</div>
 								<div class="form-group col-md-6">
 									<label for="senha">Senha</label>
-									<input type="password" class="form-control" placeholder="Digite sua senha">
+									<input type="password" class="form-control" name="senha" placeholder="Digite sua senha">
 								</div>
 							</div>
 
@@ -62,7 +42,7 @@
 							<div class="form-row">
 								<div class="form-group col-md-6">
 									<label for="nivel">Selecione uma assinatura</label>
-									<select class="custom-select" name="nivel" id="assinaturaNivel">
+									<select class="custom-select" name="assinatura" id="assinaturaNivel">
 										<option selected></option>
 										<option value="1">Básica</option>
 										<option value="2">Profissional</option>
@@ -77,8 +57,10 @@
 
 							<hr class="mt-2 my-2">
 
-							<button id="btnCadastrar" class="btn p-2 btn-primary btn-block text-uppercase fab"
-								type="button">
+							<button
+								id="btnCadastrar"
+								class="btn p-2 btn-primary btn-block text-uppercase fab"
+								type="submit">
 								Cadastrar-se
 							</button>
 
@@ -121,13 +103,14 @@
 			});
 
 			document.getElementById('btnVoltar').addEventListener('click', () => {
-				window.location = '../index.html';
+				window.location = '../index.php';
 			});
 			
 			$('#cpf').mask('000.000.000-00');
 			$('#telefone').mask('(00) 000000000');
 		};
 	</script>
-</body>
 
-</html>
+<?php
+	require_once('../layouts/footer.php');
+?>

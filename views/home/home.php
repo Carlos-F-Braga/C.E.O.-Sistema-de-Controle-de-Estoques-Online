@@ -1,14 +1,8 @@
 <?php
     require_once('../layouts/header.php');
-    session_start();
+    require_once('../../src/helpers/usuario-logado.php');
 
-    $usuarioLogado = $_SESSION['usuario'] ?? '';
-    if (!empty($usuarioLogado)) {
-        $usuarioLogado = json_decode($usuarioLogado);
-    }
-    else {
-        header('Location: ../login/login.php');
-    }
+    $usuarioLogado = verificarUsuarioLogado();
 
 ?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -20,7 +14,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../empresa/empresa-index.html">
+                    <a class="nav-link" href="../empresa/empresa-index.php">
                         Empresas
                     </a>
                 </li>
