@@ -1,42 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+    require_once('../layouts/header.php');
+    require_once('../../src/helpers/usuario-logado.php');
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C.E.O - Lista de Produtos</title>
+    verificarUsuarioLogado();
 
-    <!-- Fonts Google -->
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+    // Estabelece conexão com banco de dados e lista os produtos.
+    require_once('../../src/conexao.php');
+    require_once('../../src/produto/produto-index.php');
 
-    <!-- Bootstrap v4.6.0 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
-
-    <link rel="stylesheet" href="./styles.css" />
-</head>
-
-<body>
+    $parametros = [
+        'nome'         => $_POST['nome'] ?? '',
+        'preco'        => $_POST['preco'] ?? '',
+        'qtde_estoque' => $_POST['qtde_estoque'] ?? ''
+    ];
+    $produtos = listarProdutos($parametros, $conn);
+    $produtos = $produtos ?? [];
+?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="../home/home.html">
+                    <a class="nav-link" href="../home/home.php">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../empresa/empresa-index.html">
+                    <a class="nav-link" href="../empresa/empresa-index.php">
                         Empresas
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="./produto-index.html">
+                    <a class="nav-link active" href="./produto-index.php">
                         Produtos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../venda/venda-index.html">
+                    <a class="nav-link" href="../venda/venda-index.php">
                         Movimentações
                     </a>
                 </li>
@@ -52,15 +51,15 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <label class="form-label">Nome</label>
-                    <input type="text" class="form-control" placeholder="Ex.: Notebook Dell" aria-label="Nome do produto">
+                    <input type="text" class="form-control" name="nome" placeholder="Ex.: Notebook Dell" aria-label="Nome do produto">
                 </div>
                 <div class="col-md-2">
-                    <label class="form-label">Valor</label>
-                    <input type="text" class="form-control" placeholder="Ex.: 200,00" aria-label="Valor">
+                    <label class="form-label">Preço</label>
+                    <input type="text" class="form-control" name="name="nome"" placeholder="Ex.: 200,00" aria-label="Valor">
                 </div>
                 <div class="col-md-2">
                     <label class="form-label">QTD. Estoque</label>
-                    <input type="text" class="form-control" placeholder="Ex.: 10" aria-label="Quantidade do Estoque">
+                    <input type="text" class="form-control" name="qtde_estoque" placeholder="Ex.: 10" aria-label="Quantidade do Estoque">
                 </div>
                 <div class="col" style="margin-top: 32px">
                     <button type="button" class="btn btn-primary btn-block">Listar</button>
@@ -84,15 +83,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr class="text-center">
-                    <td scope="row">Notebook Dell</td>
-                    <td>R$ 4.000,00</td>
-                    <td>544</td>
-                    <td>5</td>
-                    <td>
-                        <button type="button" class="btn btn-sm btn-success">Editar</button>
-                    </td>
-                  </tr>
+                <?php
+                    foreach ($produtos as $produto) {
+                        ?>
+                        <tr class="text-center">
+                          <td scope="row"><?= $produto['nome'] ?></td>
+                          <td><?= $produto['preco'] ?></td>
+                          <td><?= $produto['est_inicial'] ?></td>
+                          <td><?= $produto['est_minimo'] ?></td>
+                          <td>
+                              <button type="button" class="btn btn-sm btn-success">Editar</button>
+                          </td>
+                        </tr>
+                        <?php
+                    }
+                ?>
                 </tbody>
             </table>
         </div>
@@ -101,9 +106,10 @@
 
     <script>
         document.getElementById('btnAdicionar').addEventListener('click', () => {
-            window.location = './produto-criar.html';
+            window.location = './produto-criar.php';
         });
     </script>
-</body>
 
-</html>
+<?php
+    require_once('../layouts/footer.php');
+?>

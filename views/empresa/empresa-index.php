@@ -13,7 +13,7 @@
         'cnpj' => $_POST['cnpj'] ?? ''
     ];
     $empresas = listarEmpresas($parametros, $conn);
-    
+    $empresas = $empresas ?? []; 
 ?>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="collapse navbar-collapse">

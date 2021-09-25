@@ -19,12 +19,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../produto/produto-index.html">
+                    <a class="nav-link" href="../produto/produto-index.php">
                         Produtos
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="../venda/venda-index.html">
+                    <a class="nav-link" href="../venda/venda-index.php">
                         Movimentações
                     </a>
                 </li>
