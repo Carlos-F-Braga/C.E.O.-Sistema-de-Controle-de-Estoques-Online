@@ -75,6 +75,7 @@
             <table class="table table-striped table-hover mt-4">
                 <thead>
                   <tr class="text-center">
+                    <th scope="col">Empresa</th>
                     <th scope="col">Nome do produto</th>
                     <th scope="col">Preço</th>
                     <th scope="col">Estoque Atual</th>
@@ -87,12 +88,15 @@
                     foreach ($produtos as $produto) {
                         ?>
                         <tr class="text-center">
-                          <td scope="row"><?= $produto['nome'] ?></td>
+                          <td scope="row"><?= $produto['empresa'] ?></td>
+                          <td><?= $produto['nome'] ?></td>
                           <td><?= $produto['preco'] ?></td>
                           <td><?= $produto['est_inicial'] ?></td>
                           <td><?= $produto['est_minimo'] ?></td>
                           <td>
-                              <button type="button" class="btn btn-sm btn-success">Editar</button>
+                            <a role="button" href="<?= './produto-editar.php?id=' . $produto['id_produto'] ?>" class="btn btn-sm btn-success">
+                                  Editar
+                            </a>
                           </td>
                         </tr>
                         <?php

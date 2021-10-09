@@ -12,6 +12,7 @@
         'nome' => $_POST['nome'] ?? '',
         'cnpj' => $_POST['cnpj'] ?? ''
     ];
+    
     $empresas = listarEmpresas($parametros, $conn);
     $empresas = $empresas ?? []; 
 ?>
@@ -89,12 +90,27 @@
                             <td><?= $empresa['responsavel'] ?></td>
                             <td><?= $empresa['rua'] . ", " . $empresa['bairro'] . " Nº " . $empresa['numero'] ?></td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-success">
+                                <a role="button" href="<?= './empresa-editar.php?id=' . $empresa['id_empresa'] ?>" class="btn btn-sm btn-success">
                                     Editar
-                                </button>
-                                <button type="button" class="btn btn-sm btn-danger">
-                                    Excluir
-                                </button>
+                                </a>
+                                <?php
+                                    switch ((int) $empresa['ativo']) {
+                                        case 1:
+                                            ?>
+                                                <a role="button" href="<?= '../../src/empresa/empresa-desativar.php?id=' . $empresa['id_empresa'] ?>" class="btn btn-sm btn-danger">
+                                                    Desativar
+                                                </a>
+                                            <?php
+                                            break;
+                                        case 0:
+                                            ?>
+                                                <a role="button" href="<?= '../../src/empresa/empresa-ativar.php?id=' . $empresa['id_empresa'] ?>" class="btn btn-sm btn-primary">
+                                                    Reativar
+                                                </a>
+                                            <?php
+                                            break;
+                                    }
+                                ?>
                             </td>
                             </tr>
                         <?php

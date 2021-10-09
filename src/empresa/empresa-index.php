@@ -35,7 +35,25 @@
             $stmt->execute();
     
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (\Throwable $th) {
+        } catch (\Throwable $th) { }
+    }
+
+    /**
+     * @param PDO $conn
+     */
+    function buscarEmpresaById($idEmpresa, $conn) {
+        try {
+    
+            $sql = 'SELECT em.*
+                      FROM empresa em
+                     WHERE em.id_empresa = :id_empresa LIMIT 1';
             
-        }
+            $stmt = $conn->prepare($sql);
+
+            $stmt->bindParam(':id_empresa', $idEmpresa, PDO::PARAM_STR);
+            
+            $stmt->execute();
+    
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Throwable $th) { }
     }

@@ -78,19 +78,21 @@
                     <button type="button" id="btnAdicionar" class="btn btn-primary btn-block">Adicionar</button>
                 </div>
                 <div class="col-md-2 mt-4">
-                    <button type="button" class="btn btn-primary btn-block">Emitir Relatório</button>
+                    <a role="button" href="../../src/vendas/vendas-relatorio.php" class="btn btn-primary btn-block">
+                        Emitir Relatório
+                    </a>
                 </div>
             </div>
 
             <table class="table table-striped table-hover mt-4">
                 <thead>
                     <tr class="text-center">
-                        <th scope="col">Nome do Protudo</th>
+                        <th scope="col">Empresa</th>
+                        <th scope="col">Produto</th>
                         <th scope="col">QTDE. Movimentada</th>
-                        <th scope="col">QTDE. Estoque</th>
+                        <th scope="col">Estoque</th>
                         <th scope="col">Tipo</th>
                         <th scope="col">Data</th>
-                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -98,14 +100,12 @@
                         foreach ($lancamentos as $lancamento) {
                             ?>
                             <tr class="text-center">
-                                <td scope="row"><?= $lancamento['nome'] ?></td>
+                                <td scope="row"><?= $lancamento['empresa'] ?></td>
+                                <td><?= $lancamento['nome'] ?></td>
                                 <td><?= $lancamento['quantidade'] ?></td>
                                 <td><?= $lancamento['qtde_estoque'] ?></td>
                                 <td><?= $lancamento['tipo'] ?></td>
                                 <td><?= $lancamento['data_lancamento'] ?></td>
-                                <td>
-                                    <button type="button" class="btn btn-sm btn-danger">Cancelar</button>
-                                </td>
                             </tr>
                             <?php
                         }

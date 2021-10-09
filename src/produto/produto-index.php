@@ -7,7 +7,8 @@
             
             $usuarioLogado = getUsuarioLogado();
     
-            $sql = 'SELECT pr.*
+            $sql = 'SELECT pr.*,
+                           em.nome empresa
                       FROM produto pr
                       JOIN empresa em
                         ON em.id_empresa = pr.id_empresa
@@ -44,7 +45,27 @@
             $stmt->execute();
     
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (\Throwable $th) {
+        } catch (\Throwable $th) { }
+    }
+
+    /**
+     * @param PDO $conn
+     */
+    function buscarProdutoById($idProduto, $conn) {
+        try {
+
+            $sql = 'SELECT pr.*
+                      FROM produto pr
+                      JOIN empresa em
+                        ON em.id_empresa = pr.id_empresa
+                     WHERE pr.id_produto = :id_produto LIMIT 1';
             
-        }
+            $stmt = $conn->prepare($sql);
+            
+            $stmt->bindParam(':id_produto', $idProduto, PDO::PARAM_STR);
+
+            $stmt->execute();
+    
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (\Throwable $th) { }
     }

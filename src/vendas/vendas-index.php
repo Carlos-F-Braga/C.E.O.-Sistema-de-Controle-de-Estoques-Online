@@ -8,7 +8,8 @@
     
             $sql = 'SELECT l.*,
                            DATE_FORMAT(l.data, "%d/%m/%Y %H:%i:%s") data_lancamento, 
-                           pr.nome
+                           pr.nome,
+                           em.nome empresa
                       FROM lancamento l
                       JOIN produto pr
                         ON pr.id_produto = l.id_produto
