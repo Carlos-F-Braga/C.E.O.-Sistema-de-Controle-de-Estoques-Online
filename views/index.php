@@ -29,7 +29,7 @@
                             Começe a utilizar o C.E.O e proporcione mais rapidez e controle ao seu negócio.
                     </div>
                     <p>
-                        <a href="./login/login.html" class="btn btn-primary mr-2 mb-2">
+                        <a href="./login/login.php" class="btn btn-primary mr-2 mb-2">
                             Iniciar
                         </a>
                         <a href="#servicos" class="btn btn-servicos mb-2">

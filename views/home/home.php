@@ -70,12 +70,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td scope="row">Notebook Dell</td>
-                                    <td>R$ 4.000,00</td>
-                                    <td>544</td>
-                                    <td>5</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -114,13 +108,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td scope="row">Notebook Dell</td>
-                                    <td>3</td>
-                                    <td>Saída</td>
-                                    <td>17</td>
-                                    <td>11/06/2021</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -156,11 +143,6 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr class="text-center">
-                                    <td scope="row">Fatec Eletrônicos LTDA</td>
-                                    <td>R. Fernandópolis, 2510 - Eldorado, São José do Rio Preto - SP, 15043-020</td>
-                                    <td>C.E.O</td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -177,15 +159,15 @@
     <script>
         document.body.onload = () => {
             document.getElementById('btnProdutos').addEventListener('click', () => {
-                window.location = '../produto/produto-index.html';
+                window.location = '../produto/produto-index.php';
             });
 
             document.getElementById('btnVendas').addEventListener('click', () => {
-                window.location = '../venda/venda-index.html';
+                window.location = '../venda/venda-index.php';
             });
 
             document.getElementById('btnSair').addEventListener('click', () => {
-                window.location.href = '../login/login.html';
+                window.location.href = '../login/login.php';
             });
         };
     </script>

@@ -44,11 +44,11 @@
 			document.getElementById('btnEntrar').addEventListener('click', () => {
 				/* Validar credenciais... */
 
-				window.location = '../home/home.html';
+				window.location = '../home/home.php';
 			});
 
 			document.getElementById('btnVoltar').addEventListener('click', () => {
-				window.location = '../index.html';
+				window.location = '../index.php';
 			});
 		};
 	</script>
